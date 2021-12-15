@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { configure } from 'mobx';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import { AppStore } from './stores/AppStore';
+
+import { View } from './components/View';
+
+configure({enforceActions: 'always'});
+
+const appStore = new AppStore();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <View
+      store={appStore} />
   </React.StrictMode>,
   document.getElementById('root')
 );
