@@ -13,8 +13,7 @@ export class AppStore {
 
   constructor() {
     makeObservable(this)
-    // this.eventStore = new EventStore(this, new EventService("/api"));
-    this.eventStore = new EventStore(this, new EventService("https://myappapi-jonsimm.azurewebsites.net/api"));
+    this.eventStore = new EventStore(this, new EventService("/api"));
     this.viewStore = new ViewStore(this);
   }
 }
